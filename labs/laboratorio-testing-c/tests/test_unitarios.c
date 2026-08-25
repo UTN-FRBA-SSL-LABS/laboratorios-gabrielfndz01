@@ -37,25 +37,25 @@ void test_total_con_cantidad(void) {
     carrito_init(&c);
     Producto p = {"Leche", 350, 2};  /* 350 x 2 = 700 */
     carrito_agregar(&c, p);
-    ASSERT_IGUAL(350, carrito_total(&c));  /* <-- completar el valor esperado */
+    ASSERT_IGUAL(700, carrito_total(&c));  
 }
 
 void test_carrito_lleno(void) {
     printf("\n[carrito lleno: limite de capacidad]\n");
     Carrito c;
     
-    /* 1. Inicialice un carrito */
+    
     carrito_init(&c);
     
     Producto p = {"Leche", 350, 1};
     
-    /* 2. Agregue 4 productos (usá el mismo Producto cuatro veces, está bien) */
+   
     carrito_agregar(&c, p);
     carrito_agregar(&c, p);
     carrito_agregar(&c, p);
     carrito_agregar(&c, p);
     
-    /* 3 y 4. Intente agregar un 5to producto y verifique con ASSERT_IGUAL que devuelve 0 */
+    
     ASSERT_IGUAL(0, carrito_agregar(&c, p));
 }
 
